@@ -18,14 +18,14 @@ $ mkdir ~/my-projects
 $ echo 'repositories:
   -
     type: github
-    owner: bit3
+    owner: josempuerta
 ' > ~/my-projects/mgpm.yml
 ```
 
 (3) download the [latest build][releases]:
 
 ```bash
-$ wget 'https://github.com/bit3/mgpm/releases/download/1.0.0-SNAPSHOT.12/mgpm-1.0.0-SNAPSHOT.12.jar' \
+$ wget 'https://github.com/Sw-Evolution/mgpm/releases/download/1.3.0/mgpm-1.3.0.jar' \
        -O ~/Downloads/mgpm.jar
 ```
 
@@ -38,5 +38,5 @@ $ java -jar ~/Downloads/mgpm.jar -i
 
 HAVE FUN!!!
 
-[wiki]: https://github.com/bit3/mgpm/wiki/mgpm.yml
-[releases]: https://github.com/bit3/mgpm/releases
+[wiki]: https://github.com/Sw-Evolution/mgpm/wiki/mgpm.yml
+[releases]: https://github.com/Sw-Evolution/mgpm/releases
