@@ -1,6 +1,7 @@
 package io.bit3.mgpm.config;
 
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.nio.file.Paths;

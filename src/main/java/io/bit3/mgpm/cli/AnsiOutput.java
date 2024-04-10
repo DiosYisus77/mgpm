@@ -1,5 +1,8 @@
 package io.bit3.mgpm.cli;
 
+import jnr.posix.POSIX;
+import jnr.posix.POSIXFactory;
+
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.PrintStream;
@@ -7,9 +10,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
-
-import jnr.posix.POSIX;
-import jnr.posix.POSIXFactory;
 
 public class AnsiOutput {
   private final static char ESCAPE = '\u001b';

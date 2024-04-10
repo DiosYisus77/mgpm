@@ -8,7 +8,6 @@ import io.bit3.mgpm.cmd.LogLevel;
 import io.bit3.mgpm.config.Config;
 import io.bit3.mgpm.config.ConfigLoader;
 import io.bit3.mgpm.gui.GuiApplication;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

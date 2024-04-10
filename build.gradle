@@ -1,5 +1,6 @@
 plugins {
-    id 'net.researchgate.release' version '2.3.4'
+    id 'net.researchgate.release' version '3.0.2'
+    id("com.softwareag.scriptpack") version "1.0.0"
 }
 
 apply plugin: 'java'
@@ -7,41 +8,43 @@ apply plugin: 'application'
 
 group 'io.bit3'
 
-sourceCompatibility = 1.8
+java {
+    sourceCompatibility = JavaVersion.VERSION_18
+}
 
-mainClassName = 'io.bit3.mgpm.App'
+application {
+    mainClass.set('io.bit3.mgpm.App')
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
-    compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
-    compile group: 'commons-io', name: 'commons-io', version: '2.5'
-    compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
-    compile group: 'org.yaml', name: 'snakeyaml', version: '1.18'
-    compile group: 'org.eclipse.mylyn.github', name: 'org.eclipse.egit.github.core', version: '2.1.5'
-    compile group: 'org.gitlab', name: 'java-gitlab-api', version: '1.2.8'
-    compile group: 'com.github.jnr', name: 'jnr-posix', version: '3.0.12'
-    compile group: 'org.jsoup', name: 'jsoup', version: '1.10.3'
-}
-
-release {
-    git {
-        requireBranch = /release-.*/
-    }
+    implementation group: 'org.yaml', name: 'snakeyaml', version: '1.8'
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'org.slf4j:slf4j-simple:1.7.25'
+    implementation 'commons-cli:commons-cli:1.4'
+    implementation 'commons-io:commons-io:2.5'
+    implementation 'commons-lang:commons-lang:2.6'
+    implementation 'org.yaml:snakeyaml:1.18'
+    implementation 'org.eclipse.mylyn.github:org.eclipse.egit.github.core:2.1.5'
+    implementation 'org.gitlab:java-gitlab-api:1.2.8'
+    implementation 'com.github.jnr:jnr-posix:3.0.12'
+    implementation 'org.jsoup:jsoup:1.10.3'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    implementation group: 'com.github.jnr', name: 'jnr-posix', version: '3.1.19'
 }
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'mgpm',
-                'Implementation-Version': version,
-                'Main-Class': "$mainClassName"
+        attributes("Implementation-Title": "Gradle",
+                "Implementation-Version": version,
+                "Main-Class": 'io.bit3.mgpm.App')
     }
 
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
+

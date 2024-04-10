@@ -10,7 +10,6 @@ import io.bit3.mgpm.worker.LoggingWorkerObserver;
 import io.bit3.mgpm.worker.Update;
 import io.bit3.mgpm.worker.Upstream;
 import io.bit3.mgpm.worker.Worker;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
