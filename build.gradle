@@ -36,6 +36,12 @@ dependencies {
     implementation group: 'com.github.jnr', name: 'jnr-posix', version: '3.1.19'
 }
 
+release {
+    git {
+        requireBranch.set("realease-.*")
+    }
+}
+
 jar {
     manifest {
         attributes("Implementation-Title": "Gradle",
